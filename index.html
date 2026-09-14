@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2.8 Studios | Visual Production & Creative Media</title>
+    <title>2.8 Studio | Visual Production & Creative Media</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
@@ -71,7 +71,27 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
-        /* --- Header & Navbar: سطر واحد أفقي دائماً في اللاب والموبايل --- */
+        /* --- Scroll Reveal Animation --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .services-grid .reveal:nth-child(2) {
+            transition-delay: 0.12s;
+        }
+        .services-grid .reveal:nth-child(3) {
+            transition-delay: 0.24s;
+        }
+
+        /* --- Header & Navbar --- */
         header {
             position: sticky;
             top: 0;
@@ -147,7 +167,7 @@
             text-shadow: 0 0 10px rgba(196, 181, 253, 0.8);
         }
 
-        /* --- Hero Section: تصغير نسبي انسيابي يمنع تراكم الكلمات --- */
+        /* --- Hero Section --- */
         .hero {
             text-align: center;
             padding: clamp(3rem, 7vw, 5.5rem) 1.2rem clamp(2rem, 4vw, 3.5rem);
@@ -249,7 +269,7 @@
             background: #000;
         }
 
-        /* --- Services Section: يحافظ على هيكل الأعمدة التناسبية --- */
+        /* --- Services Section --- */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -367,12 +387,12 @@
     <canvas id="ocean-canvas"></canvas>
     <div class="subtle-noise"></div>
 
-    <!-- Header & Navigation: صف واحد دائماً دون تكديس -->
+    <!-- Header & Navigation -->
     <header>
         <div class="nav-container">
             <a href="https://www.instagram.com/2.8_agency?stkn=MXVteDB4ZmZyaWtjdQ==" target="_blank" rel="noopener noreferrer" class="logo">
-                <img src="images/logo.svg" alt="2.8 Studios Logo">
-                <span class="logo-text">2.8 <span>Studios</span></span>
+                <img src="images/logo.svg" alt="2.8 Studio Logo">
+                <span class="logo-text">2.8 <span>Studio</span></span>
             </a>
 
             <ul class="nav-links">
@@ -383,19 +403,19 @@
         </div>
     </header>
 
-    <!-- Hero Section: توازن الخطوط دون استهلاك شاشة الهاتف -->
-    <div class="hero">
+    <!-- Hero Section -->
+    <div class="hero reveal">
         <h1>Transforming Creative Visions Into Cinematic Reality</h1>
-        <p>Welcome to 2.8 Studios — your premier destination for high-end visual production, brand identity, and captivating media storytelling.</p>
+        <p>Welcome to 2.8 Studio — your premier destination for high-end visual production, brand identity, and captivating media storytelling.</p>
     </div>
 
     <!-- Our Work Section -->
     <section id="work">
-        <div class="section-title">
+        <div class="section-title reveal">
             <h2>Our Work</h2>
             <div class="title-divider"></div>
         </div>
-        <div class="work-container">
+        <div class="work-container reveal">
             <div class="video-player-mockup">
                 <div class="player-wrapper">
                     <wistia-player media-id="aggf0qrao3" aspect="0.5625"></wistia-player>
@@ -406,20 +426,20 @@
 
     <!-- Services Section -->
     <section id="services">
-        <div class="section-title">
+        <div class="section-title reveal">
             <h2>Services</h2>
             <div class="title-divider"></div>
         </div>
         <div class="services-grid">
-            <div class="service-card">
+            <div class="service-card reveal">
                 <h3>🎬 Cinematic Video Editing</h3>
                 <p>High-retention editing tailored for Reels, Shorts, and brand commercials with dynamic pacing and sleek motion graphics.</p>
             </div>
-            <div class="service-card">
+            <div class="service-card reveal">
                 <h3>🎨 Visual Identity & UI/UX</h3>
                 <p>Crafting bespoke brand assets, art direction, and digital interfaces that resonate deeply with your target audience.</p>
             </div>
-            <div class="service-card">
+            <div class="service-card reveal">
                 <h3>🚀 Strategic Media Campaigns</h3>
                 <p>Performance-driven visual storytelling designed to scale awareness, maximize engagement, and elevate brand authority.</p>
             </div>
@@ -428,12 +448,12 @@
 
     <!-- Contact Section -->
     <section id="contact">
-        <div class="section-title">
+        <div class="section-title reveal">
             <h2>Contact Us</h2>
             <div class="title-divider"></div>
         </div>
-        <div class="contact-box">
-            <form onsubmit="event.preventDefault(); alert('Thank you for reaching out to 2.8 Studios!');">
+        <div class="contact-box reveal">
+            <form onsubmit="event.preventDefault(); alert('Thank you for reaching out to 2.8 Studio!');">
                 <div class="form-group">
                     <label>Full Name</label>
                     <input type="text" placeholder="Your name" required>
@@ -452,11 +472,11 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 2.8 Studios. All rights reserved.</p>
+    <footer class="reveal">
+        <p>&copy; 2026 2.8 Studio. All rights reserved.</p>
     </footer>
 
-    <!-- محرك التدرج الحي: إضاءة واضحة وحركة سائلة مستمرة -->
+    <!-- Canvas Animation & Scroll Reveal Scripts -->
     <script>
         const canvas = document.getElementById('ocean-canvas');
         const ctx = canvas.getContext('2d');
@@ -503,6 +523,20 @@
             requestAnimationFrame(draw);
         }
         draw();
+
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
     </script>
 </body>
 </html>
